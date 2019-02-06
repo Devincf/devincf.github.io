@@ -8,6 +8,10 @@ body, html{
   color:#666;
 }
 
+body{
+  background-color:#111;
+}
+
 
 
 
@@ -16,8 +20,6 @@ body, html{
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  background-color: #000;
-  opacity: 0.85;
   /*
     fixed = parallax
     scroll = normal
@@ -41,7 +43,7 @@ body, html{
 }
 
 .pimg1{
-  background-image:url('../img/backgroundimg1.png');
+  background-image:url('../img/code.png');
   min-height:100%;
 }
 
@@ -56,8 +58,13 @@ body, html{
 }
 
 .section{
+  position:relative;
   text-align:center;
   padding:0px 80px;
+}
+.section h2{
+  margin:0px;
+  padding:10px 0px;
 }
 
 .section-light{
@@ -107,7 +114,7 @@ body, html{
 .wrap {
   overflow: hidden;
   position: relative;
-  margin: 0px auto;
+  margin: 0px;
   width:528px;
   height: 300px;
 }
@@ -171,6 +178,46 @@ body, html{
   border-color: transparent transparent transparent #fff;
   right: 0;
   margin-right: 30px;
+}
+
+#projname{
+  position: absolute;
+  text-align:center;
+  left:61%;
+  top:7%;
+}
+
+#projdesc{
+  position: absolute;
+  text-align:center;
+  width:400px;
+  height:135px;
+  left:35%;
+  top:18%;
+}
+#projmot{
+  position: absolute;
+  text-align:center;
+  width:400px;
+  height:135px;
+  left:35%;
+  top:53%;
+}
+#projlang{
+  position: absolute;
+  text-align:center;
+  width:500px;
+  height:135px;
+  left:70%;
+  top:18%;
+}
+#projlibs{
+  position: absolute;
+  text-align:center;
+  width:500px;
+  height:135px;
+  left:70%;
+  top:53%;
 }
 
 
