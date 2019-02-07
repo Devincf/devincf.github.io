@@ -1,7 +1,8 @@
 let sliderImages,
   arrowLeft,
   arrowRight,
-  current = 0;
+  current = 0,
+  arrow1,arrow2;
 
 let mainTimer;
 
@@ -23,6 +24,7 @@ function reset() {
 function startSlide() {
   reset();
   sliderImages[0].style.opacity = 1;
+  current = 0;
 }
 
 function resetMainTimer(){
@@ -66,6 +68,8 @@ window.onload = function() {
   sliderImages = this.document.querySelectorAll(".slide");
   arrowLeft = this.document.querySelector("#slide-arrow-left");
   arrowRight = this.document.querySelector("#slide-arrow-right");
+  arrow1 = this.document.querySelector(".arrow-1");
+  arrow2 = this.document.querySelector(".arrow-2");
 
   arrowLeft.addEventListener("click", function() {
     slideLeft();
@@ -73,6 +77,22 @@ window.onload = function() {
   arrowRight.addEventListener("click", function() {
     slideRight();
   });
+  arrow1.addEventListener("click", function(){
+    startSlide();
+    document.querySelector('.arrow-1').scrollIntoView({ 
+      behavior: 'smooth'
+    });
+
+  });
+
+  arrow2.addEventListener("click", function(){
+    startSlide();
+    document.querySelector('.arrow-2').scrollIntoView({ 
+      behavior: 'smooth'
+    });
+
+  });
+
 
   resetMainTimer();
   startSlide();

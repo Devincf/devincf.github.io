@@ -9,7 +9,7 @@ body, html{
 }
 
 body{
-  background-color:#111;
+  background-color:#fff;
 }
 
 
@@ -43,7 +43,8 @@ body{
 }
 
 .pimg1{
-  background-image:url('../img/code.png');
+  background-image:url('../img/code2.png');
+  opacity: 0.95;
   min-height:100%;
 }
 
@@ -60,7 +61,7 @@ body{
 .section{
   position:relative;
   text-align:center;
-  padding:0px 80px;
+  padding:0px 50px;
 }
 .section h2{
   margin:0px;
@@ -115,8 +116,8 @@ body{
   overflow: hidden;
   position: relative;
   margin: 0px;
-  width:528px;
-  height: 300px;
+  width:1056px;
+  height: 600px;
 }
 
 .slide {
@@ -129,8 +130,8 @@ body{
   position: absolute;
   top:0px;
   left:0px;
-  width:528px;
-  height: 300px;
+  width:1056px;
+  height: 600px;
 }
 
 .slide1 {
@@ -156,7 +157,7 @@ body{
   color: #fff;
 }
 
-.arrow {
+.slide-arrow {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -183,41 +184,41 @@ body{
 #projname{
   position: absolute;
   text-align:center;
-  left:61%;
-  top:7%;
+  left:75%;
+  top:5%;
 }
 
 #projdesc{
   position: absolute;
   text-align:center;
-  width:400px;
-  height:135px;
-  left:35%;
-  top:18%;
+  width:370px;
+  height:280px;
+  left:60%;
+  top:11%;
 }
 #projmot{
   position: absolute;
   text-align:center;
-  width:400px;
-  height:135px;
-  left:35%;
-  top:53%;
+  width:370px;
+  height:300px;
+  left:60%;
+  top:51%;
 }
 #projlang{
   position: absolute;
   text-align:center;
-  width:500px;
-  height:135px;
-  left:70%;
-  top:18%;
+  width:370px;
+  height:280px;
+  left:80%;
+  top:11%;
 }
 #projlibs{
   position: absolute;
   text-align:center;
-  width:500px;
-  height:135px;
-  left:70%;
-  top:53%;
+  width:370px;
+  height:300px;
+  left:80%;
+  top:51%;
 }
 
 
@@ -225,4 +226,59 @@ body{
   .pimg1, .pimg2, .pimg3{
     background-attachment:scroll;
   }
+}
+
+.content{
+  position:relative;
+}
+
+.arrow-1{
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  margin-top:28vh;
+  border:none;
+
+}
+.arrow-2{
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  margin-top:2vh;
+  border:none;
+}
+
+.arrow{
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #AAA;
+    border-right: 5px solid #AAA;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
 }
