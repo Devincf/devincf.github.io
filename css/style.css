@@ -236,7 +236,7 @@ body{
   position: absolute;
   cursor: pointer;
   top: 50%;
-  margin-top:28vh;
+  margin-top:30vh;
   border:none;
 
 }
@@ -244,7 +244,7 @@ body{
   position: absolute;
   cursor: pointer;
   top: 50%;
-  margin-top:2vh;
+  margin-top:8vh;
   border:none;
 }
 
