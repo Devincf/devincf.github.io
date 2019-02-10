@@ -64,12 +64,49 @@ function slideRight() {
   resetMainTimer();
 }
 
+window.onscroll = function(a){
+  if(a.pageY == 0){
+    arrow1.style.display = "none";
+  }else if(a.pageY >= 1650){
+    arrow2.style.display = "none";
+  }else{
+    if(arrow1.style.display == "none") 
+        arrow1.style.display = "block";
+
+    if(arrow2.style.display == "none") 
+      arrow2.style.display = "block";
+  }
+}
+
+function getCorrectUpAnchor(){
+  const pos = window.pageYOffset;
+
+  if(pos >= 0 && pos <= 1000){
+    return document.body;
+  }else if(pos > 1000){
+    return document.querySelector(".anchor-1");
+  }
+}
+
+function getCorrectDownAnchor(){  
+  const pos = window.pageYOffset;
+
+  if(pos >= 0 && pos <= 650){
+    return document.querySelector(".anchor-1");
+  }else if(pos > 650 && pos < 1665){
+    return document.querySelector(".anchor-2");
+  }else if(pos >= 1665){
+    return document.querySelector("footer");
+  }
+}
+
 window.onload = function() {
   sliderImages = this.document.querySelectorAll(".slide");
   arrowLeft = this.document.querySelector("#slide-arrow-left");
   arrowRight = this.document.querySelector("#slide-arrow-right");
-  arrow1 = this.document.querySelector(".arrow-1");
-  arrow2 = this.document.querySelector(".arrow-2");
+  arrow1 = this.document.querySelector(".arrow-up");
+  arrow1.style.display = "none";
+  arrow2 = this.document.querySelector(".arrow-down");
 
   arrowLeft.addEventListener("click", function() {
     slideLeft();
@@ -79,7 +116,7 @@ window.onload = function() {
   });
   arrow1.addEventListener("click", function(){
     startSlide();
-    document.querySelector('.arrow-1').scrollIntoView({ 
+    getCorrectUpAnchor().scrollIntoView({ 
       behavior: 'smooth'
     });
 
@@ -87,7 +124,7 @@ window.onload = function() {
 
   arrow2.addEventListener("click", function(){
     startSlide();
-    document.querySelector('.arrow-2').scrollIntoView({ 
+    getCorrectDownAnchor().scrollIntoView({ 
       behavior: 'smooth'
     });
 

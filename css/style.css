@@ -12,9 +12,6 @@ body{
   background-color:#fff;
 }
 
-
-
-
 .pimg1, .pimg2, .pimg3{
   position:relative;
   background-position:center;
@@ -228,32 +225,38 @@ body{
   }
 }
 
+.anchor-1{
+  position:absolute;
+  bottom:10%;
+  left:50%;
+}
+
+.anchor-2{
+  position:absolute;
+  bottom:2%;
+  left:50%;
+}
+
 .content{
   position:relative;
 }
 
-.arrow-1{
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  margin-top:30vh;
-  border:none;
-
+.arrow-top{
+  position: fixed;
+  top:5%;
 }
-.arrow-2{
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  margin-top:8vh;
-  border:none;
+.arrow-bottom{
+  position: fixed;
+  bottom:5%;
 }
 
 .arrow{
+  cursor: pointer;
   z-index: 10;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.arrow span{
+.arrow.arrow-up span{
     display: block;
     width: 30px;
     height: 30px;
@@ -261,24 +264,42 @@ body{
     border-right: 5px solid #AAA;
     transform: rotate(45deg);
     margin: -10px;
-    animation: animate 2s infinite;
+    animation: animate1 3s infinite;
 }
-.arrow span:nth-child(2){
-    animation-delay: -0.2s;
+.arrow.arrow-down span{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #AAA;
+  border-right: 5px solid #AAA;
+  transform: rotate(90deg);
+  margin: -10px;
+  animation: animate2 3s infinite;
 }
-.arrow span:nth-child(3){
-    animation-delay: -0.4s;
-}
-@keyframes animate {
+
+@keyframes animate1 {
     0%{
         opacity: 0;
-        transform: rotate(45deg) translate(-20px,-20px);
+        transform: rotate(225deg) translate(-15px,-15px);
     }
     50%{
         opacity: 1;
     }
     100%{
         opacity: 0;
-        transform: rotate(45deg) translate(20px,20px);
+        transform: rotate(225deg) translate(15px,15px);
     }
+}
+@keyframes animate2 {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-15px,-15px);
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(15px,15px);
+  }
 }
