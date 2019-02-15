@@ -24,6 +24,20 @@ body{
   background-attachment:scroll;
 }
 
+.slider-unselected-ball{
+  position: absolute;
+  background-image: url("../img/circle2.png");
+  width: 51px;
+  height: 51px;
+}
+
+.slider-selected-ball{
+  position: absolute;
+  background-image: url("../img/circle1.png");
+  width: 51px;
+  height: 51px;
+}
+
 .pphoto{
   width:200px;
   height: 200px;
@@ -260,8 +274,8 @@ body{
     display: block;
     width: 30px;
     height: 30px;
-    border-bottom: 5px solid #AAA;
-    border-right: 5px solid #AAA;
+    border-bottom: 5px dotted #000;/* Gradient border */
+    border-right: 5px dotted #000;
     transform: rotate(45deg);
     margin: -10px;
     animation: animate1 3s infinite;
@@ -270,8 +284,8 @@ body{
   display: block;
   width: 30px;
   height: 30px;
-  border-bottom: 5px solid #AAA;
-  border-right: 5px solid #AAA;
+  border-bottom: 5px dotted #000;
+  border-right: 5px dotted #000;
   transform: rotate(90deg);
   margin: -10px;
   animation: animate2 3s infinite;

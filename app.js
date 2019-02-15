@@ -6,6 +6,8 @@ let sliderImages,
 
 let mainTimer;
 
+
+
 function getNext(n) {
   return n >= sliderImages.length - 1 ? 0 : n + 1;
 }
@@ -108,6 +110,12 @@ window.onload = function() {
   arrow1.style.display = "none";
   arrow2 = this.document.querySelector(".arrow-down");
 
+  a = this.document.querySelector("#time");
+
+  test = setInterval(function(){
+    date = new Date();
+    a.innerText = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds();
+  },1);
   arrowLeft.addEventListener("click", function() {
     slideLeft();
   });
